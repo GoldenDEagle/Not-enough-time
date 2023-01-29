@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5884846236215251190}
   - component: {fileID: 7296751938604968508}
   - component: {fileID: 7296751938604968510}
-  - component: {fileID: 7296751938604968511}
+  - component: {fileID: 5807287854942485989}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -287,7 +287,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &7296751938604968511
+--- !u!114 &5807287854942485989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,9 +296,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7296751938604968509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 289041cabad99f04d8a921f5f25b683e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openandclose: {fileID: 7296751938604968510}
-  open: 0
-  _interactionControl: {fileID: 1684457827321414951, guid: 0f4a4ece6decb1a4e9952daf708f48e0, type: 3}
+  _animator: {fileID: 7296751938604968510}
+  _isOpened: 0
+  _openAnimationKey: Opening
+  _closeAnimationKey: Closing

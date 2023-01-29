@@ -21,6 +21,7 @@ namespace Assets.Scripts.InteractionSystem
 
         void Start()
         {
+            gameObject.layer = 6;
             _isOpened = false;
             _interactionPrompt = !_isOpened ? _openPrompt : _closePrompt;
         }
