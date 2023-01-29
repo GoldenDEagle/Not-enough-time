@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7296751938604968508}
   - component: {fileID: 7296751938604968510}
   - component: {fileID: 7296751938604968511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,5 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 7296751938604968510}
   open: 0
-  Player: {fileID: 0}
   _interactionControl: {fileID: 1684457827321414951, guid: 0f4a4ece6decb1a4e9952daf708f48e0, type: 3}

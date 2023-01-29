@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Characters.Player
 {
@@ -13,7 +14,9 @@ namespace Assets.Scripts.Characters.Player
         [SerializeField] private float _rotationSpeed = 4f;
         [SerializeField] private float _gravityValue = -9.81f;
 
+
         // references
+        [SerializeField] private InputActionReference _interactionControl;
         private CharacterController _characterController;
         private Transform _cameraMainTransform;
         private Animator _animator;
@@ -33,6 +36,11 @@ namespace Assets.Scripts.Characters.Player
             _characterController = GetComponent<CharacterController>();
             _animator = GetComponent<Animator>();
             _cameraMainTransform = Camera.main.transform;
+        }
+
+        private void OnEnable()
+        {
+            _interactionControl.action.Enable();
         }
 
         void FixedUpdate()
@@ -90,6 +98,11 @@ namespace Assets.Scripts.Characters.Player
                 _animator.SetTrigger(JumpKey);
                 _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
             }
+        }
+
+        private void OnDisable()
+        {
+            _interactionControl.action.Disable();
         }
     }
 }
