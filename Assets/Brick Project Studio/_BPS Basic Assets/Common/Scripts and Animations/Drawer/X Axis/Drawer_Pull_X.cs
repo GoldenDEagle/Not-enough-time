@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace SojaExiles
 
@@ -11,12 +12,26 @@ namespace SojaExiles
 
 		public Animator pull_01;
 		public bool open;
-		public Transform Player;
 
-		void Start()
+        private Transform Player;
+
+        [SerializeField] private InputActionReference _interactionControl;
+
+        private void OnEnable()
+        {
+            _interactionControl.action.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _interactionControl.action.Disable();
+        }
+
+        void Start()
 		{
 			open = false;
-		}
+            Player = GameObject.FindWithTag("Player").transform;
+        }
 
 		void OnMouseOver()
 		{
@@ -29,7 +44,7 @@ namespace SojaExiles
 						print("object name");
 						if (open == false)
 						{
-							if (Input.GetMouseButtonDown(0))
+							if (_interactionControl.action.triggered)
 							{
 								StartCoroutine(opening());
 							}
@@ -38,7 +53,7 @@ namespace SojaExiles
 						{
 							if (open == true)
 							{
-								if (Input.GetMouseButtonDown(0))
+								if (_interactionControl.action.triggered)
 								{
 									StartCoroutine(closing());
 								}

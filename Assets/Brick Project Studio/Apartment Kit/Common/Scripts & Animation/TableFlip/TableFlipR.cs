@@ -1,16 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TableFlipR: MonoBehaviour {
 
 	public Animator FlipR;
 	public bool open;
-	public Transform Player;
 
-	void Start (){
+    private Transform Player;
+
+    [SerializeField] private InputActionReference _interactionControl;
+
+    private void OnEnable()
+    {
+        _interactionControl.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _interactionControl.action.Disable();
+    }
+
+    void Start ()
+	{
 		open = false;
-	}
+        Player = GameObject.FindWithTag("Player").transform;
+    }
 
 	void OnMouseOver (){
 		{
@@ -18,12 +34,12 @@ public class TableFlipR: MonoBehaviour {
 				float dist = Vector3.Distance (Player.position, transform.position);
 				if (dist < 15) {
 					if (open == false) {
-						if (Input.GetMouseButtonDown (0)) {
+						if (_interactionControl.action.triggered) {
 							StartCoroutine (opening ());
 						}
 					} else {
 						if (open == true) {
-							if (Input.GetMouseButtonDown (0)) {
+							if (_interactionControl.action.triggered) {
 								StartCoroutine (closing ());
 							}
 						}
