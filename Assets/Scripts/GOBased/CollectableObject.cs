@@ -6,7 +6,7 @@ namespace Assets.Scripts.GOBased
 {
     public class CollectableObject : MonoBehaviour, IInteractable
     {
-        [SerializeField] private string _interactionPrompt;
+        [SerializeField] private string _interactionPrompt = "Pick up";
         [SerializeField] private UnityEvent _onCollected;
         public string InteractionPrompt => _interactionPrompt;
 

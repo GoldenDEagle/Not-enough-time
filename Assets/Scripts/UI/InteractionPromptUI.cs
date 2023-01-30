@@ -15,6 +15,7 @@ namespace Assets.Scripts.UI
             gameObject.SetActive(false);
         }
 
+        // Rotating towards camera
         private void LateUpdate()
         {
             var rotation = Camera.main.transform.rotation;

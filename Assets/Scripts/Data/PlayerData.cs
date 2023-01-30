@@ -6,6 +6,6 @@ namespace Assets.Scripts.Data
     public class PlayerData
     {
         public float RemainingTime;
-        public float TimeCollected;
+        public float TotalTime;
     }
 }
