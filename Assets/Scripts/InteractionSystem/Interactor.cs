@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.UI;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -50,7 +49,7 @@ namespace Assets.Scripts.InteractionSystem
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(_interactionPoint.position, _interactionRadius);
         }
 
