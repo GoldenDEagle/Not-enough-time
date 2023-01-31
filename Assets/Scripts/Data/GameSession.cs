@@ -7,7 +7,7 @@ namespace Assets.Scripts.Data
     {
         [SerializeField] private PlayerData _data;
 
-        private bool _timeIsRunning = true;
+        private bool _timeIsRunning = false;
 
         public static GameSession Instance { get; private set; }
 

@@ -5,14 +5,11 @@ namespace Assets.Scripts.TimeManipulation
 {
     public class TimerSwitch : MonoBehaviour
     {
-        public void Switch()
+        public void Switch(bool enabled)
         {
-            if (GameSession.Instance.TimeIsRunning)
-                GameSession.Instance.SwitchTimer(false);
-            else
-            {
-                GameSession.Instance.SwitchTimer(true);
-            }
+
+            GameSession.Instance.SwitchTimer(enabled);
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.InteractionSystem
 {
@@ -8,11 +9,13 @@ namespace Assets.Scripts.InteractionSystem
         [SerializeField] private Animator _animator;
         [SerializeField] private bool _isOpened;
 
-        private string _interactionPrompt;
-
         [Header("Animator Keys")]
         [SerializeField] private string _openAnimationKey = "Opening";
         [SerializeField] private string _closeAnimationKey = "Closing";
+
+        [SerializeField] private UnityEvent _onDoorOpened;
+
+        private string _interactionPrompt;
 
         public string InteractionPrompt => _interactionPrompt;
 
@@ -49,6 +52,7 @@ namespace Assets.Scripts.InteractionSystem
             _animator.Play(_openAnimationKey);
             _isOpened = true;
             yield return new WaitForSeconds(.5f);
+            _onDoorOpened?.Invoke();
         }
 
         IEnumerator ClosingRoutine()
