@@ -23,6 +23,7 @@ namespace Assets.Scripts.InteractionSystem
 
         private void Update()
         {
+            // searches for objects on interactable layer in a sphere
             _objectsFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionRadius,
                 _objectsInRange, _interactableMask);
 
@@ -32,8 +33,10 @@ namespace Assets.Scripts.InteractionSystem
 
                 if (_interactable != null)
                 {
+                    // display prompt
                     _interactionPromptUI.ShowPrompt(_interactable.InteractionPrompt);
 
+                    // interact
                     if (_interactionControl.action.triggered)
                     {
                         _interactable.Interact();
