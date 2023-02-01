@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Data;
+using Assets.Scripts.Utils;
 using TMPro;
 using UnityEngine;
 
@@ -24,12 +25,7 @@ namespace Assets.Scripts.UI
 
         private void SetTimer(float time)
         {
-            int minutes = Mathf.FloorToInt(time / 60f);
-            int seconds = Mathf.FloorToInt(time - minutes * 60f);
-
-            string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            _timerText.text = niceTime;
+            _timerText.text = TimeConverter.FormattedTime(time);
         }
     }
 }

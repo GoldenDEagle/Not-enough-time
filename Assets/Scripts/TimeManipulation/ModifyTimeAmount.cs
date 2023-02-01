@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Data;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,11 +9,14 @@ namespace Assets.Scripts.TimeManipulation
     {
         [SerializeField] private float _secondsToAdd;
 
+        public static event Action OnTotalTimeChanged;
+
         // Both timers modification
         public void ModifyTotalTime()
         {
-            GameSession.Instance.Data.RemainingTime += _secondsToAdd;
+            ModifyRemainingTime();
             GameSession.Instance.Data.TotalTime += _secondsToAdd;
+            OnTotalTimeChanged.Invoke();
         }
 
         // Only current timer

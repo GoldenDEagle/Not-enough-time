@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2693547171534970416}
   - component: {fileID: 2693547171534970417}
   - component: {fileID: 2693547171534970430}
+  - component: {fileID: 8321831426806381868}
   m_Layer: 6
   m_Name: Hourglass
   m_TagString: Untagged
@@ -168,7 +169,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dd2ee92a3e392429702f1094f4903e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToAdd: 5
+  _secondsToAdd: 3
+--- !u!114 &8321831426806381868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831819215016798818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6dfe690b1dbf624b9e0de1c4a3eb62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
 --- !u!1001 &8770439621940195479
 PrefabInstance:
   m_ObjectHideFlags: 0
