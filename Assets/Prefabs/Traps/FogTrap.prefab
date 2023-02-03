@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4824,6 +4824,7 @@ GameObject:
   - component: {fileID: 8500780925610090580}
   - component: {fileID: 8500780925610090581}
   - component: {fileID: 8500780925610090578}
+  - component: {fileID: -434367598924728922}
   m_Layer: 0
   m_Name: FogTrap
   m_TagString: Untagged
@@ -4904,3 +4905,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-434367598924728922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241346960374135554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fe94eeaca72554997c17bcdeea5804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

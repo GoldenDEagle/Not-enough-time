@@ -25,6 +25,7 @@ namespace Assets.Scripts.Data
         {
             if (Instance != null)
             {
+                LoadHUD();
                 Destroy(gameObject);
             }
             else
@@ -47,7 +48,6 @@ namespace Assets.Scripts.Data
                 SwitchTimer(false);
                 _data.RemainingTime = _data.TotalTime;
                 SceneManager.LoadScene("ApartmentKit");
-                LoadHUD();
             }
         }
 

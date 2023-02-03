@@ -38,7 +38,6 @@ namespace Assets.Scripts.LevelManagement
             yield return new WaitForSeconds(_transitionTime);
             SceneManager.LoadScene(sceneName);
             _animator.SetBool(Enabled, false);
-            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
     }
 }
