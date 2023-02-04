@@ -34,6 +34,7 @@ namespace Assets.Scripts.InteractionSystem
                 if (_isOpened == false)
                 {
                     StartCoroutine(OpeningRoutine());
+                    _onDoorOpened?.Invoke();
                     _interactionPrompt = _closePrompt;
                     return true;
                 }
@@ -52,7 +53,6 @@ namespace Assets.Scripts.InteractionSystem
             _animator.Play(_openAnimationKey);
             _isOpened = true;
             yield return new WaitForSeconds(.5f);
-            _onDoorOpened?.Invoke();
         }
 
         IEnumerator ClosingRoutine()

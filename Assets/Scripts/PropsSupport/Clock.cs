@@ -1,4 +1,5 @@
 using Assets.Scripts.Data;
+using System;
 using UnityEngine;
 
 public class Clock : MonoBehaviour 
@@ -24,9 +25,11 @@ void Start()
     pointerMinutes = transform.Find("rotation_axis_pointer_minutes").gameObject;
     pointerHours   = transform.Find("rotation_axis_pointer_hour").gameObject;
 
+    var timePassed = GameSession.Instance.Data.TotalTime - GameSession.Instance.Data.RemainingTime;
 
     msecs = 0.0f;
-    seconds = 0;
+    seconds = Convert.ToInt32(timePassed % 60f);
+    minutes = Convert.ToInt32(timePassed / 60f);
 }
 void Update() 
 {

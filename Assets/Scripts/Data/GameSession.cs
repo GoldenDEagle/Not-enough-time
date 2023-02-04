@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.LevelManagement;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Data
         [SerializeField] private PlayerData _data;
 
         // runs if game is active
-        private bool _timeIsRunning = false;
+        public bool _timeIsRunning = false;
 
         public static GameSession Instance { get; private set; }
 
@@ -47,7 +48,8 @@ namespace Assets.Scripts.Data
             {
                 SwitchTimer(false);
                 _data.RemainingTime = _data.TotalTime;
-                SceneManager.LoadScene("ApartmentKit");
+                var loader = FindObjectOfType<LevelLoader>();
+                loader.LoadLevel("ApartmentKit");
             }
         }
 
