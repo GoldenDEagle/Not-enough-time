@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33462384463608404}
   - component: {fileID: 23502592362120258}
   - component: {fileID: 64798138104688152}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Human_WatchTower_Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4970586127915032}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorHinge1
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -3117,8 +3117,7 @@ GameObject:
   - component: {fileID: 33739088731001798}
   - component: {fileID: 23261829411152026}
   - component: {fileID: 64158847074125974}
-  - component: {fileID: 5273272767083622658}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Human_WatchTower_Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3204,25 +3203,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: df50a3be1d2f01b47b07eae8601dfdbe, type: 3}
---- !u!114 &5273272767083622658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226435685142138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 289041cabad99f04d8a921f5f25b683e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 7723755142953892930}
-  _isOpened: 0
-  _openAnimationKey: opened
-  _closeAnimationKey: closed
-  _onDoorOpened:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1236127891237834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7464,7 +7444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4099232977852368}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorHinge2
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -9965,6 +9945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2173196917133729210}
   - component: {fileID: 7723755142953892930}
+  - component: {fileID: 5724527397974374019}
   m_Layer: 6
   m_Name: Doors
   m_TagString: Untagged
@@ -10009,6 +9990,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5724527397974374019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401316129102130175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289041cabad99f04d8a921f5f25b683e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7723755142953892930}
+  _isOpened: 0
+  _openAnimationKey: opened
+  _closeAnimationKey: closed
+  _onDoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8009213743374495834
 PrefabInstance:
   m_ObjectHideFlags: 0
