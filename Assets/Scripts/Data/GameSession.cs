@@ -26,6 +26,7 @@ namespace Assets.Scripts.Data
         {
             if (Instance != null)
             {
+                Cursor.visible = false;
                 LoadHUD();
                 Destroy(gameObject);
             }
@@ -34,6 +35,7 @@ namespace Assets.Scripts.Data
                 DontDestroyOnLoad(this);
                 Instance = this;
 
+                Cursor.visible = false;
                 LoadHUD();
             }
         }
@@ -47,7 +49,7 @@ namespace Assets.Scripts.Data
             if (_data.RemainingTime <= 0f)
             {
                 SwitchTimer(false);
-                _data.RemainingTime = _data.TotalTime;
+                ResetTimer();
                 var loader = FindObjectOfType<LevelLoader>();
                 loader.LoadLevel("ApartmentKit");
             }
@@ -62,6 +64,11 @@ namespace Assets.Scripts.Data
         private void LoadHUD()
         {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+        }
+
+        public void ResetTimer()
+        {
+            _data.RemainingTime = _data.TotalTime;
         }
 
         public void StoreDestructionState(string itemId)

@@ -1,5 +1,7 @@
+using Assets.Scripts.Utils;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +27,14 @@ namespace Assets.Scripts.Characters.Player
             if (context.performed)
             {
                 _playerController.Jump();
+            }
+        }
+
+        public void OnPausePressed(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                WindowUtils.CreateWindow("Windows/PauseWindow");
             }
         }
     }
