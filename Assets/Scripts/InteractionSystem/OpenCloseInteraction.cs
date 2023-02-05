@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Audio;
+using Assets.Scripts.Events;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,12 +37,14 @@ namespace Assets.Scripts.InteractionSystem
                 {
                     StartCoroutine(OpeningRoutine());
                     _onDoorOpened?.Invoke();
+                    GameEvents.Instance.SoundPlay(SfxSound.Open);
                     _interactionPrompt = _closePrompt;
                     return true;
                 }
                 else if (_isOpened == true)
                 {
                     StartCoroutine(ClosingRoutine());
+                    GameEvents.Instance.SoundPlay(SfxSound.Close);
                     _interactionPrompt = _openPrompt;
                     return true;
                 }

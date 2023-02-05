@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Data;
+﻿using Assets.Scripts.Audio;
+using Assets.Scripts.Data;
+using Assets.Scripts.Events;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -23,6 +25,8 @@ namespace Assets.Scripts.TimeManipulation
         public void ModifyRemainingTime()
         {
             GameSession.Instance.Data.RemainingTime += _secondsToAdd;
+            var clip = _secondsToAdd > 0 ? SfxSound.AddTime : SfxSound.ReduceTime;
+            GameEvents.Instance.SoundPlay(clip);
         }
     }
 }
