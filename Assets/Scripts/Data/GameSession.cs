@@ -1,8 +1,8 @@
 ﻿using Assets.Scripts.LevelManagement;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace Assets.Scripts.Data
 {
@@ -21,6 +21,13 @@ namespace Assets.Scripts.Data
         public PlayerData Data => _data;
         public bool TimeIsRunning => _timeIsRunning;
 
+        private LevelLoader _loader;
+
+        [Inject]
+        private void Construct(LevelLoader loader)
+        {
+            _loader = loader;
+        }
 
         private void Awake()
         {
@@ -50,8 +57,8 @@ namespace Assets.Scripts.Data
             {
                 SwitchTimer(false);
                 ResetTimer();
-                var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("ApartmentKit");
+                //var loader = FindObjectOfType<LevelLoader>();
+                _loader.LoadLevel("ApartmentKit");
             }
         }
 

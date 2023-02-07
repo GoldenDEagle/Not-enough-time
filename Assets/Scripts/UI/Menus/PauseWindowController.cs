@@ -1,12 +1,21 @@
 ﻿using Assets.Scripts.Data;
 using Assets.Scripts.LevelManagement;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.UI.Menus
 {
     public class PauseWindowController : MonoBehaviour
     {
         private float _defaultTimeScale;
+
+        private LevelLoader _loader;
+
+        [Inject]
+        private void Construct(LevelLoader loader)
+        {
+            _loader = loader;
+        }
 
         private void Start()
         {
@@ -29,15 +38,15 @@ namespace Assets.Scripts.UI.Menus
             Cursor.visible = false;
             Time.timeScale = _defaultTimeScale;
             GameSession.Instance.ResetTimer();
-            var loader = FindObjectOfType<LevelLoader>();
-            loader.LoadLevel("ApartmentKit");
+            //var loader = FindObjectOfType<LevelLoader>();
+            _loader.LoadLevel("ApartmentKit");
         }
 
         public void OnExit()
         {
             Time.timeScale = _defaultTimeScale;
-            var loader = FindObjectOfType<LevelLoader>();
-            loader.LoadLevel("MainMenu");
+            //var loader = FindObjectOfType<LevelLoader>();
+            _loader.LoadLevel("MainMenu");
             Destroy(gameObject);
         }
     }

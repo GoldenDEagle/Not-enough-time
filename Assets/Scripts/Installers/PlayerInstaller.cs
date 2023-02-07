@@ -13,6 +13,11 @@ namespace Assets.Scripts.Installers
 
         public override void InstallBindings()
         {
+            BindPlayerController();
+        }
+
+        private void BindPlayerController()
+        {
             PlayerController playerController = Container
                 .InstantiatePrefabForComponent<PlayerController>(_playerPrefab, _playerStartPosition.position, Quaternion.identity, null);
 

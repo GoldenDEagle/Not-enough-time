@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Zenject;
 
 namespace Assets.Scripts.UI.Menus
 {
@@ -12,6 +13,14 @@ namespace Assets.Scripts.UI.Menus
         [SerializeField] private Image _background;
         [SerializeField] private TextMeshProUGUI _titlesText;
         [SerializeField] private CanvasGroup _exitButton;
+
+        private LevelLoader _loader;
+
+        [Inject]
+        private void Construct(LevelLoader loader)
+        {
+            _loader = loader;
+        }
 
         private void OnEnable()
         {
@@ -25,8 +34,8 @@ namespace Assets.Scripts.UI.Menus
 
         public void OnExit()
         {
-            var loader = FindObjectOfType<LevelLoader>();
-            loader.LoadLevel("MainMenu");
+            //var loader = FindObjectOfType<LevelLoader>();
+            _loader.LoadLevel("MainMenu");
         }
     }
 }

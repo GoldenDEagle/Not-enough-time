@@ -11,21 +11,21 @@ namespace Assets.Scripts.LevelManagement
 
         private static readonly int Enabled = Animator.StringToHash("enabled");
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static void OnAfterSceneLoad()
-        {
-            InitLoader();
-        }
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        //static void OnAfterSceneLoad()
+        //{
+        //    InitLoader();
+        //}
 
-        private void Awake()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        //private void Awake()
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //}
 
-        private static void InitLoader()
-        {
-            SceneManager.LoadScene("LevelLoader", LoadSceneMode.Additive);
-        }
+        //private static void InitLoader()
+        //{
+        //    SceneManager.LoadScene("LevelLoader", LoadSceneMode.Additive);
+        //}
 
         public void LoadLevel(string sceneName)
         {
